@@ -57,6 +57,11 @@ input {
   margin-top: 64px;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+}
+
 .table {
   margin: 0 50px 50px;
   padding: 24px;
@@ -64,6 +69,7 @@ input {
   border-radius: 10px;
   overflow: hidden;
   border-collapse: collapse;
+  width: calc(100% - 100px);
 }
 
 th {
