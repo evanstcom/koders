@@ -35,6 +35,7 @@ function renderTable(data) {
 
 // Функция для сортировки таблицы
 function sortTable(column) {
+  searchValue.value = ""; // Сбрасываем значение инпута
   const sortedPosts = [...posts].sort((a, b) => {
     if (sort[column]) {
       return a[column] < b[column] ? -1 : 1;
