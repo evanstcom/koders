@@ -2,7 +2,7 @@ let posts = [];
 let sort = { id: true, title: true, body: true }; // сортировка по умолчанию
 
 document.getElementById("search").addEventListener("input", filterTable); // обработчик для инпута
-
+const searchValue = document.getElementById("search"); // Получаем значение инпута
 document.querySelectorAll("#data-table th").forEach((th) => {
   //обработчик для заголовков таблицы
   th.addEventListener("click", () => {
@@ -48,17 +48,19 @@ function sortTable(column) {
 
 // фильтруем посты по инпуту
 function filterTable() {
-  const searchValue = document.getElementById("search").value.toLowerCase(); // Получаем значение инпута
-  const filteredPosts = posts.filter(
-    //фильтруем посты по заголовку или содержимому
-    (post) =>
-      post.title.toLowerCase().includes(searchValue) ||
-      post.body.toLowerCase().includes(searchValue)
-  );
-  renderTable(filteredPosts); //выводим посты
+  const search = searchValue.value.toLowerCase(); // Получаем значение инпута
+  if (search.length >= 3) {
+    const filteredPosts = posts.filter(
+      //фильтруем посты по заголовку или содержимому
+      (post) =>
+        post.title.toLowerCase().includes(search) ||
+        post.body.toLowerCase().includes(search)
+    );
+    renderTable(filteredPosts); //выводим посты
+  } else {
+    renderTable(posts);
+  }
 }
-
-// Обработчики событий
 
 // Загружаем данные при загрузке страницы
 window.onload = fetchPosts;
