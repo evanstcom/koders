@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Practice 2</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="link" href="../1/index.html">Первое задание</a>
+      <a class="link" href="../2/index.html">Второе задание</a>
+    </nav>
+    <h1 class="title">Список постов</h1>
+    <input
+      type="text"
+      id="search"
+      placeholder="Поиск по заголовкам (не менее 3-х символов)"
+    />
+    <table id="data-table" class="table">
+      <thead>
+        <tr>
+          <th data-sort="id">ID</th>
+          <th data-sort="title">Название</th>
+          <th data-sort="body">Содержимое</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="index.js"></script>
+  </body>
+</html>

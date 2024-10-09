@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Practice 1</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="link" href="../2/index.html">Второе задание</a>
+      <a class="link" href="../3/index.html">Третье задание</a>
+    </nav>
+    <section class="section">
+      <h1 class="section__title">Modal Form</h1>
+      <button id="open-modal" class="section__btn btn">Open Form</button>
+    </section>
+    <div class="modal-window" id="modal">
+      <div class="container">
+          <form class="form">
+            <h2 class="form__title">Стать партнером проекта</h2>
+            <div class="about-company">
+                <div class="about-company__info">
+                    <div class="input-box">
+                        <label class="input-box__label input-box__label_required">Название организации</label>
+                        <input class="input-box__input" type="text" placeholder="ООО Название организации" required/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label input-box__label_required">Телефон</label>
+                        <input class="input-box__input" type="tel" placeholder="+7 (999) 999-99-99" required/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label input-box__label_required">Email</label>
+                        <input class="input-box__input" type="email" placeholder="example@example.com" required/>
+                    </div>
+                </div>
+
+                    <div class="logo">
+                        <span class="logo__label input-box__label_required">Логотип (jpeg, png)</span>
+                        <div class="logo__wrapper">
+                            <div class="logo__upload">
+                                <label for="fileInput">
+                                    <img class="logo__image" id="preview" src="#" style="display:none;">
+                                    <div>
+                                        <div  class="logo__mask">
+                                            <img src="./public/upload.svg" alt="">
+                                            <span class="logo__text" style="text-align: center;">Выберите <br> файл</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <input class="logo__input" type="file" id="fileInput" accept="image/*">
+                            </div>
+                            <div class="logo__close" id="clearButton">
+                                <img src="./public/close.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
+                    <div class="input-box">
+                        <label class="input-box__label input-box__label_required">Направление</label>
+                        <select class="input-box__input" required>
+                            <option value=''>Выберите направление</option>
+                            <option value='eco'>Экология</option>
+                            <option value='med'>Медицица</option>
+                            <option value='trail'>Транспорт</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label-img "><img src="./public/web.svg" alt="url"></label>
+                        <input class="input-box__input" type="url" placeholder="https://..."/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label-img "><img src="./public/vk.svg" alt="vk"></label>
+                        <input class="input-box__input" type="url" placeholder="https://..."/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label-img "><img src="./public/od.svg" alt="ok"></label>
+                        <input class="input-box__input" type="url" placeholder="https://..."/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label-img "><img src="./public/fb.svg" alt="fb"></label>
+                        <input class="input-box__input" type="url" placeholder="https://..."/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label-img "><img src="./public/inst.svg" alt="inst"></label>
+                        <input class="input-box__input" type="url" placeholder="https://..."/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label-img "><img src="./public/yt.svg" alt="yt"></label>
+                        <input class="input-box__input" type="url" placeholder="https://..."/>
+                    </div>
+                    <div class="input-box">
+                        <label class="input-box__label">Руководитель</label>
+                        <input class="input-box__input" type="email" />
+                    </div>
+            <div class="form__btns">
+                <button type="submit" class="form__send btn">Стать партнёром проекта</button>
+                <button id="close-modal" class="form__close">Отменить</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+const arr = [10, 12, 15, 21];
+// выведет в консоль через 3 сек (4 строки сразу) для каждого элемента массива строки согласно условию.
+// в данно случае:
+Bad: 10 
+Bad: 12 
+Good: 15 
+Good: 21
+
+
+for (let i = 0; i < arr.length; i++) {
+  setTimeout(function () {
+    console.log(arr[i] > 13 ? `Good: ${arr[i]}` : `Bad: ${arr[i]}`);
+  }, 3000);
+}
+
+arr.forEach((item) => {
+  setTimeout(function () {
+    console.log(item > 13 ? `Good: ${item}` : `Bad: ${item}`);
+  }, 3000);
+});
+
+for (let num of arr) {
+  setTimeout(function () {
+    console.log(num > 13 ? `Good: ${num}` : `Bad: ${num}`);
+  }, 3000);
+}
+
+function arrFunc(arr) {
+  const result = [];
+  for (let num of arr) {
+    num > 13 ? result.push(`Good: ${num}`) : result.push(`Bad: ${num}`);
+  }
+  return result.toString();
+}
+
+console.log(arrFunc(arr)); // выведет Bad: 10, Bad: 12, Good: 15, Good: 21 

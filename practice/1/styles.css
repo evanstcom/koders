@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 16px;
+}
+
+.link {
+  color: #000;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #e5266e;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+input,
+select {
+  outline: none;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+}
+.section__title {
+  margin-bottom: 20px;
+  font-size: calc((100vw - 30rem) / (80 - 30) * (1.5 - 1) + 1.5rem);
+}
+
+.btn {
+  color: white;
+  padding: 14px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #e5266e;
+  transition: color 0.3s ease;
+}
+
+.modal-window {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  overflow-y: scroll;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  width: 754px;
+  padding: 53px 98px;
+  background-color: white;
+  border-radius: 10px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.form__title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.form__close {
+  margin: 0 auto;
+  padding: 5px;
+  color: #0848c0;
+  font-size: 16px;
+}
+
+.form__btns {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.about-company {
+  display: flex;
+  gap: 26px;
+}
+
+.about-company__info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  flex-direction: column;
+}
+
+.logo__label {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #6a6e72;
+}
+
+.logo__wrapper {
+  display: flex;
+  align-items: center;
+  width: 163px;
+  height: 163px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.logo__upload {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo__image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.logo__mask {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background-color: #0000007c;
+  gap: 7px;
+  color: white;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.logo__close {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  z-index: 9999;
+  padding: 5px;
+  fill: red;
+}
+
+.logo__input {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+/* LOGO  end*/
+.input-box {
+  position: relative;
+}
+
+.input-box__label {
+  position: absolute;
+  top: 2px;
+  left: 21px;
+  font-size: 12px;
+  color: #6a6e72;
+}
+.input-box__label-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 21px;
+}
+.input-box__url {
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.input-box__label_required::before {
+  content: "✱";
+  color: red;
+}
+
+.input-box__input {
+  padding: 0 20px;
+  width: 100%;
+  height: 56px;
+}
+.active {
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 50px auto;
+    width: 90%;
+    padding: 26px 48px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 26px 48px;
+  }
+  .about-company {
+    flex-direction: column-reverse;
+  }
+  .logo {
+    align-self: flex-start;
+  }
+}
+@media screen and (max-width: 567px) {
+  .container {
+    padding: 16px 32px;
+    margin: 32px auto;
+  }
+  .about-company__info {
+    gap: 16px;
+  }
+  .form {
+    gap: 16px;
+  }
+  .form__title {
+    font-size: 24px;
+  }
+  .logo__wrapper {
+    width: 124px;
+    height: 124px;
+  }
+  .logo__text {
+    font-size: 14px;
+  }
+  .logo__close {
+    width: 24px;
+    height: 24px;
+  }
+  .logo__label {
+    font-size: 10px;
+  }
+  .input-box__label {
+    font-size: 10px;
+  }
+  .input-box__input {
+    height: 48px;
+    padding: 0 16px;
+  }
+  .input-box__label {
+    font-size: 10px;
+    left: 16px;
+  }
+  .input-box__label-img {
+    right: 16px;
+  }
+}
+@media screen and (max-width: 490px) {
+  .form__title {
+    font-size: 20px;
+  }
+  .input-box__label {
+    font-size: 8px;
+  }
+  .input-box__input {
+    font-size: 12px;
+  }
+  .input-box__input {
+    height: 40px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .form__title {
+    font-size: 16px;
+  }
+}
