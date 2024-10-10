@@ -41,7 +41,7 @@ input,
 select {
   outline: none;
   font-size: 16px;
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid rgb(190, 190, 190);
 }
 
@@ -82,12 +82,18 @@ select {
   display: flex;
   flex-direction: column;
   margin: 100px auto;
-  width: 754px;
-  padding: 53px 98px;
+  width: 762px;
+  padding: 56px 98px;
   background-color: white;
   border-radius: 10px;
 }
 .form {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.form__wrapper {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -106,6 +112,7 @@ select {
 }
 
 .form__btns {
+  margin-top: 18px;
   display: flex;
   gap: 16px;
   flex-direction: column;
@@ -127,7 +134,6 @@ select {
 .logo {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   position: relative;
   flex-direction: column;
 }
@@ -141,7 +147,6 @@ select {
 
 .logo__wrapper {
   display: flex;
-  align-items: center;
   width: 163px;
   height: 163px;
   background-color: transparent;
@@ -196,8 +201,8 @@ select {
   justify-content: center;
   cursor: pointer;
   position: absolute;
-  top: 0px;
-  right: 10px;
+  top: 10px;
+  right: 2px;
   z-index: 9999;
   padding: 5px;
   fill: red;
@@ -211,6 +216,10 @@ select {
   left: 0;
   opacity: 0;
 }
+.logo__text {
+  line-height: 1.5;
+  margin-top: 10px;
+}
 /* LOGO  end*/
 .input-box {
   position: relative;
@@ -218,16 +227,15 @@ select {
 
 .input-box__label {
   position: absolute;
-  top: 2px;
-  left: 21px;
+  top: 7px;
+  left: 17px;
   font-size: 12px;
   color: #6a6e72;
 }
 .input-box__label-img {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 21px;
+  top: 19px;
+  right: 23px;
 }
 .input-box__url {
   padding: 12px 20px;
@@ -237,11 +245,12 @@ select {
 .input-box__label_required::before {
   content: "✱";
   color: red;
+  font-size: 12px;
 }
 
 .input-box__input {
-  padding: 0 20px;
-  width: 100%;
+  padding: 10px 17px 0;
+  width: 99%;
   height: 56px;
 }
 .active {
@@ -297,6 +306,10 @@ select {
   }
   .input-box__label {
     font-size: 10px;
+    top: 2px;
+  }
+  .input-box__label_required::before {
+    font-size: 8px;
   }
   .input-box__input {
     height: 48px;
