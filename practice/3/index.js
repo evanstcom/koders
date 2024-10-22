@@ -1,4 +1,5 @@
 let posts = [];
+let sortedPosts = [];
 let sort = { id: true, title: true, body: true }; // сортировка по умолчанию
 
 document.getElementById("search").addEventListener("input", filterTable); // обработчик для инпута
@@ -15,7 +16,8 @@ document.querySelectorAll("#data-table th").forEach((th) => {
 async function fetchPosts() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   posts = await response.json();
-  renderTable(posts);
+  sortedPosts = [...posts];
+  renderTable(sortedPosts);
 }
 
 // Функция для отображения таблицы
@@ -35,8 +37,8 @@ function renderTable(data) {
 
 // Функция для сортировки таблицы
 function sortTable(column) {
-  searchValue.value = ""; // Сбрасываем значение инпута
-  const sortedPosts = [...posts].sort((a, b) => {
+  /*   searchValue.value = ""; // Сбрасываем значение инпута */
+  sortedPosts.sort((a, b) => {
     if (sort[column]) {
       return a[column] < b[column] ? -1 : 1;
     } else {
@@ -49,17 +51,19 @@ function sortTable(column) {
 
 // фильтруем посты по инпуту
 function filterTable() {
-  const search = searchValue.value.toLowerCase(); // Получаем значение инпута
+  const search = searchValue.value.toLowerCase().trim(); // Получаем значение инпута
   if (search.length >= 3) {
-    const filteredPosts = posts.filter(
+    console.log(search);
+    sortedPosts = [...posts].filter(
       //фильтруем посты по заголовку или содержимому
       (post) =>
         post.title.toLowerCase().includes(search) ||
         post.body.toLowerCase().includes(search)
     );
-    renderTable(filteredPosts); //выводим посты
+    renderTable(sortedPosts); //выводим посты
   } else {
-    renderTable(posts);
+    sortedPosts = [...posts];
+    renderTable(sortedPosts);
   }
 }
 
