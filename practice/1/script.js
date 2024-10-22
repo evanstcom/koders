@@ -36,6 +36,28 @@ document.getElementById("clearButton").addEventListener("click", function () {
 
 const phoneNumber = document.getElementById("phoneNumber");
 
+/* phoneNumber.addEventListener("input", phoneMask);
+
+function phoneMask() {
+  console.log(phoneNumber.value);
+  let value = phoneNumber.value.replace(/\D/g, ""); // Удалить все, кроме цифр
+  // Применить формат
+  if (value.length > 0) {
+    value = "+7 (" + value;
+  }
+  if (value.length > 7) {
+    value = value.slice(0, 7) + ") " + value.slice(7);
+  }
+  if (value.length > 12) {
+    value = value.slice(0, 12) + "-" + value.slice(12);
+  }
+  if (value.length > 15) {
+    value = value.slice(0, 15) + "-" + value.slice(15);
+  }
+  console.log(value);
+  phoneNumber.value = value;
+} */
+
 const submitButton = document
   .getElementById("send-form")
   .addEventListener("click", sendForm);
