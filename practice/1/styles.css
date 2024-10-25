@@ -245,7 +245,6 @@ select {
 .input-box__select {
   padding: 12px 17px;
   width: 99%;
-  padding: 10px 17px 0;
   height: 56px;
 }
 select::-ms-expand {
@@ -282,6 +281,15 @@ select::-ms-expand {
 }
 .active {
   display: block;
+}
+
+.error {
+  border: 1px solid red;
+}
+.error-message{
+  position: absolute;
+  color: red;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 1024px) {

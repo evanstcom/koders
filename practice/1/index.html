@@ -16,7 +16,7 @@
     </section>
     <div class="modal-window" id="modal">
       <div class="container">
-          <form class="form">
+          <form class="form" id="form">
             <h2 class="form__title">Стать партнером проекта</h2>
             <div class="about-company">
                 <div class="about-company__info">
@@ -26,7 +26,8 @@
                     </div>
                     <div class="input-box">
                         <label class="input-box__label input-box__label_required">Телефон</label>
-                        <input id="phoneNumber" class="input-box__input" type="text" placeholder="+7 (___) ___-__-__"  required/>
+                        <input class="input-box__input" type="text" id="phone" placeholder="+7 (___) ___-__-__" maxlength="18" required>
+                        <p id="error-message" class="error-message"></p>
                     </div>
                     <div class="input-box">
                         <label class="input-box__label input-box__label_required">Email</label>
@@ -53,55 +54,55 @@
                             </div>
                         </div>
                     </div>
-
             </div>
-<div class="form__wrapper">
-    <div class="input-box">
-        <label class="input-box__label input-box__label_required">Направление</label>
-        <select class="input-box__input" required>
-            <option value=''>Выберите направление</option>
-            <option value='eco'>Экология</option>
-            <option value='med'>Медицица</option>
-            <option value='trail'>Транспорт</option>
-        </select>
-        <div class="arrow">
-            <img src="./public/arrow.svg" alt="">
-        </div>
-    </div>
-    <div class="input-box">
-        <label class="input-box__label-img "><img src="./public/web.svg" alt="url"></label>
-        <input class="input-box__input" type="url" placeholder="https://..."/>
-    </div>
-    <div class="input-box">
-        <label class="input-box__label-img "><img src="./public/vk.svg" alt="vk"></label>
-        <input class="input-box__input" type="url" placeholder="https://..."/>
-    </div>
-    <div class="input-box">
-        <label class="input-box__label-img "><img src="./public/od.svg" alt="ok"></label>
-        <input class="input-box__input" type="url" placeholder="https://..."/>
-    </div>
-    <div class="input-box">
-        <label class="input-box__label-img "><img src="./public/fb.svg" alt="fb"></label>
-        <input class="input-box__input" type="url" placeholder="https://..."/>
-    </div>
-    <div class="input-box">
-        <label class="input-box__label-img "><img src="./public/inst.svg" alt="inst"></label>
-        <input class="input-box__input" type="url" placeholder="https://..."/>
-    </div>
-    <div class="input-box">
-        <label class="input-box__label-img "><img src="./public/yt.svg" alt="yt"></label>
-        <input class="input-box__input" type="url" placeholder="https://..."/>
-    </div>
-    <div class="input-box">
-        <label class="input-box__label">Руководитель</label>
-        <input class="input-box__input" type="text" placeholder="Иванов Иван Иванович" />
-    </div>
-<div class="form__btns">
-<button id="send-form" type="submit" class="form__send btn">Стать партнёром проекта</button>
-<button id="close-modal" class="form__close">Отменить</button>
-</div>
-</div>
+            <div class="form__wrapper">
+                <div class="input-box">
+                    <label class="input-box__label input-box__label_required">Направление</label>
+                    <select class="input-box__input" required>
+                        <option value=''>Выберите направление</option>
+                        <option value='eco'>Экология</option>
+                        <option value='med'>Медицица</option>
+                        <option value='trail'>Транспорт</option>
+                    </select>
+                    <div class="arrow">
+                        <img src="./public/arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label class="input-box__label-img "><img src="./public/web.svg" alt="url"></label>
+                    <input class="input-box__input" type="url" placeholder="https://..."/>
+                </div>
+                <div class="input-box">
+                    <label class="input-box__label-img "><img src="./public/vk.svg" alt="vk"></label>
+                    <input class="input-box__input" type="url" placeholder="https://..."/>
+                </div>
+                <div class="input-box">
+                    <label class="input-box__label-img "><img src="./public/od.svg" alt="ok"></label>
+                    <input class="input-box__input" type="url" placeholder="https://..."/>
+                </div>
+                <div class="input-box">
+                    <label class="input-box__label-img "><img src="./public/fb.svg" alt="fb"></label>
+                    <input class="input-box__input" type="url" placeholder="https://..."/>
+                </div>
+                <div class="input-box">
+                    <label class="input-box__label-img "><img src="./public/inst.svg" alt="inst"></label>
+                    <input class="input-box__input" type="url" placeholder="https://..."/>
+                </div>
+                <div class="input-box">
+                    <label class="input-box__label-img "><img src="./public/yt.svg" alt="yt"></label>
+                    <input class="input-box__input" type="url" placeholder="https://..."/>
+                </div>
+                <div class="input-box">
+                    <label class="input-box__label">Руководитель</label>
+                    <input class="input-box__input" type="text" placeholder="Иванов Иван Иванович" />
+                </div>
+                <div class="form__btns">
+                    <button id="send-form" type="submit" class="form__send btn">Стать партнёром проекта</button>
+                    <button id="close-modal" class="form__close">Отменить</button>
+                </div>
+            </div>
         </form>
+    </div>
     </div>
     <script src="script.js"></script>
   </body>

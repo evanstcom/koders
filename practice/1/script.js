@@ -1,11 +1,11 @@
 const modal = document.querySelector("#modal");
-const openModal = document
+document
   .querySelector("#open-modal")
   .addEventListener("click", () => {
     modal.classList.add("active");
   });
 
-const closeModal = document
+document
   .querySelector("#close-modal")
   .addEventListener("click", (e) => {
     modal.classList.remove("active");
@@ -34,49 +34,50 @@ document.getElementById("clearButton").addEventListener("click", function () {
   preview.style.display = "none";
 });
 
-const phoneNumber = document.getElementById("phoneNumber");
 
-/* phoneNumber.addEventListener("input", phoneMask);
+//маска и валидация
+const phoneInput = document.getElementById('phone');
+const form = document.getElementById('form');
+const errorMessage = document.getElementById('error-message');
 
-function phoneMask() {
-  console.log(phoneNumber.value);
-  let value = phoneNumber.value.replace(/\D/g, ""); // Удалить все, кроме цифр
-  // Применить формат
-  if (value.length > 0) {
-    value = "+7 (" + value;
+// Функция для установки маски
+phoneInput.addEventListener('input', function() {
+  errorMessage.textContent = '';
+  phoneInput.classList.remove('error');
+  let inputValue = this.value.replace(/\D/g, '')// убираем все лишнее
+  if (inputValue.startsWith('7')){
+    inputValue = inputValue.substring(1); //если первая 7 - удаляем
   }
-  if (value.length > 7) {
-    value = value.slice(0, 7) + ") " + value.slice(7);
-  }
-  if (value.length > 12) {
-    value = value.slice(0, 12) + "-" + value.slice(12);
-  }
-  if (value.length > 15) {
-    value = value.slice(0, 15) + "-" + value.slice(15);
-  }
-  console.log(value);
-  phoneNumber.value = value;
-} */
+  let maskedValue = ''; //чистим маску
 
-const submitButton = document
-  .getElementById("send-form")
-  .addEventListener("click", sendForm);
-
-function sendForm() {
-  const submit = validatePhone();
-  if (!submit) {
-    alert(`Номер телефона невалидный`);
+  // формируем маску
+  if (inputValue.length > 0) {
+    maskedValue = '+7 (' + inputValue.substring(0, 3);
+    if (inputValue.length > 3) {
+      maskedValue += ') ' + inputValue.substring(3, 6);
+    }
+    if (inputValue.length > 6) {
+      maskedValue += '-' + inputValue.substring(6, 8);
+    }
+    if (inputValue.length > 8) {
+      maskedValue += '-' + inputValue.substring(8, 10);
+    }
   }
-}
 
-function validatePhone() {
-  const phoneRegex =
-    /^\+7\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}$|^8\s?\(?\d{3}\)?\s?\d{3}\s?\d{2}\s?\d{2}$|^7\d{10}$/;
-  if (phoneRegex.test(phoneNumber.value)) {
-    console.log(`"${phoneNumber.value}" - Номер телефона валидный`);
-    return true;
+  this.value = maskedValue; // Установка обновленного значения в инпут
+});
+
+// Функция для валидации при отправке формы
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const rawValue = phoneInput.value.replace(/\D/g, '');
+
+  // Валидация номера
+  if (rawValue.length === 11 && rawValue.startsWith('7')) {
+    errorMessage.textContent = '';
+    form.submit();
   } else {
-    console.log(`"${phoneNumber.value}" - Номер телефона невалидный`);
-    return false;
+    errorMessage.textContent = 'Пожалуйста, введите корректный номер телефона^.';
+    phoneInput.classList.add('error');
   }
-}
+});
