@@ -77,6 +77,11 @@ form.addEventListener('submit', function(e) {
     errorMessage.textContent = '';
     form.submit();
   } else {
+    window.scrollTo({
+      top: 100,
+      left: 0,
+      behavior: "smooth"
+    });
     errorMessage.textContent = 'Пожалуйста, введите корректный номер телефона^.';
     phoneInput.classList.add('error');
   }

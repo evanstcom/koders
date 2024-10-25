@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -69,8 +70,15 @@ select {
   padding: 14px 20px;
   font-size: 16px;
   border-radius: 4px;
+  border: 1px solid transparent;
   background-color: #e5266e;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  color: #e5266e;
+  background-color: white;
+  border-color: #e5266e;
 }
 
 .modal-window {
@@ -196,6 +204,12 @@ select {
   font-size: 18px;
   font-weight: normal;
   text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo__mask:hover {
+  opacity: 0.8;
 }
 
 .logo__close {
@@ -253,7 +267,7 @@ select::-ms-expand {
 
 .input-box__label {
   position: absolute;
-  top: 7px;
+  top: 3px;
   left: 17px;
   font-size: 12px;
   color: #6a6e72;
@@ -275,7 +289,7 @@ select::-ms-expand {
 }
 
 .input-box__input {
-  padding: 10px 17px 0;
+  padding: 0 17px;
   width: 99%;
   height: 56px;
 }
