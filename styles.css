@@ -1,39 +1,45 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("./assets/fonts/Montserrat-Regular.ttf");
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
-  font-family: sans-serif;
 }
+
 a {
-  text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
 }
 
 .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
 }
 
 .link {
-  color: #000;
-  font-size: 14px;
-  transition: color 0.3s ease;
+    color: #000;
+    font-size: 14px;
+    transition: color 0.3s ease;
 }
 
 .link:hover {
-  color: #e5266e;
+    color: #e5266e;
 }
 
 .section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 64px);
 }
