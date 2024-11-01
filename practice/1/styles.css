@@ -418,6 +418,26 @@ select::-ms-expand {
 }
 
 @media screen and (max-width: 490px) {
+    .logo {
+        width: 100%;
+    }
+
+    .logo__label {
+        align-self: flex-start;
+    }
+
+    .form__btns button {
+        font-size: 12px;
+    }
+
+    .input-box__label-img {
+        top: 12px;
+    }
+
+    .input-box__label-img img {
+        height: 16px;
+    }
+
     .form__title {
         font-size: 20px;
     }

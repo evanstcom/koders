@@ -71,17 +71,12 @@ phoneInput.addEventListener('input', function () {
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     const rawValue = phoneInput.value.replace(/\D/g, '');
-
     // Валидация номера
     if (rawValue.length === 11 && rawValue.startsWith('7')) {
         errorMessage.textContent = '';
+        alert('Ваша заявка принята!');
         form.submit();
     } else {
-        window.scrollTo({
-            top: 100,
-            left: 0,
-            behavior: "smooth"
-        });
         errorMessage.textContent = 'Пожалуйста, введите корректный номер телефона^.';
         phoneInput.classList.add('error');
     }
