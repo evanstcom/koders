@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles.css"/>
     <title>Practice 1</title>
-  </head>
-  <body>
-    <nav class="nav">
-      <a class="link" href="https://evanstcom.github.io/koders/">На главную</a>
-    </nav>
-    <section class="section">
-      <h1 class="section__title">Modal Form</h1>
-      <button id="open-modal" class="section__btn btn">Open Form</button>
-    </section>
-    <div class="modal-window" id="modal">
-      <div class="container">
-          <form class="form" id="form">
+</head>
+<body>
+<nav class="nav">
+    <a class="link" href="https://evanstcom.github.io/koders/">На главную</a>
+</nav>
+<section class="section">
+    <h1 class="section__title">Modal Form</h1>
+    <button id="open-modal" class="section__btn btn">Open Form</button>
+</section>
+<div class="modal-window" id="modal">
+    <div class="container">
+        <form class="form" id="form">
             <h2 class="form__title">Стать партнером проекта</h2>
             <div class="about-company">
                 <div class="about-company__info">
                     <div class="input-box">
                         <label class="input-box__label input-box__label_required">Название организации</label>
-                        <input class="input-box__input" type="text" value="АВЦ" placeholder="ООО Название организации" required/>
+                        <input class="input-box__input" type="text" value="АВЦ" placeholder="ООО Название организации"
+                               required/>
                     </div>
                     <div class="input-box">
                         <label class="input-box__label input-box__label_required">Телефон</label>
-                        <input class="input-box__input" type="text" id="phone" placeholder="+7 (___) ___-__-__" maxlength="18" required>
+                        <input class="input-box__input" type="text" id="phone" placeholder="+7 (___) ___-__-__"
+                               minlength="18" maxlength="18" required>
                         <p id="error-message" class="error-message"></p>
                     </div>
                     <div class="input-box">
@@ -34,26 +36,26 @@
                         <input class="input-box__input" type="email" placeholder="example@example.com" required/>
                     </div>
                 </div>
-                    <div class="logo">
-                        <span class="logo__label input-box__label_required">Логотип (jpeg, png)</span>
-                        <div class="logo__wrapper">
-                            <div class="logo__upload">
-                                <label for="fileInput">
-                                    <img class="logo__image" id="preview" src="#" style="display:none;">
-                                    <div>
-                                        <div  class="logo__mask">
-                                            <img src="./public/upload.svg" alt="">
-                                            <span class="logo__text" style="text-align: center;">Выберите <br> файл</span>
-                                        </div>
+                <div class="logo">
+                    <span class="logo__label input-box__label_required">Логотип (jpeg, png)</span>
+                    <div class="logo__wrapper">
+                        <div class="logo__upload">
+                            <label for="fileInput">
+                                <img class="logo__image" id="preview" src="#" style="display:none;">
+                                <div>
+                                    <div class="logo__mask">
+                                        <img src="./public/upload.svg" alt="">
+                                        <span class="logo__text" style="text-align: center;">Выберите <br> файл</span>
                                     </div>
-                                </label>
-                                <input class="logo__input" type="file" id="fileInput" accept="image/*" required>
-                            </div>
-                            <div class="logo__close" id="clearButton">
-                                <img src="./public/close.svg" alt="">
-                            </div>
+                                </div>
+                            </label>
+                            <input class="logo__input" type="file" id="fileInput" accept="image/*" required>
+                        </div>
+                        <div class="logo__close" id="clearButton">
+                            <img src="./public/close.svg" alt="">
                         </div>
                     </div>
+                </div>
             </div>
             <div class="form__wrapper">
                 <div class="input-box">
@@ -94,7 +96,7 @@
                 </div>
                 <div class="input-box">
                     <label class="input-box__label">Руководитель</label>
-                    <input class="input-box__input" type="text" placeholder="Иванов Иван Иванович" />
+                    <input class="input-box__input" type="text" placeholder="Иванов Иван Иванович"/>
                 </div>
                 <div class="form__btns">
                     <button id="send-form" type="submit" class="form__send btn">Стать партнёром проекта</button>
@@ -103,7 +105,7 @@
             </div>
         </form>
     </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+</div>
+<script src="script.js"></script>
+</body>
 </html>
